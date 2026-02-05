@@ -1,0 +1,25 @@
+{
+  "tailwindCSS.includeLanguages": {
+    "php": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    // Untuk atribut class di PHP
+    [
+      "class\\s*=\\s*['\"`]([^'\"`]*)['\"`]",
+      "class\\s*:\\s*['\"`]([^'\"`]*)['\"`]"
+    ],
+
+    // Untuk variabel PHP yang mengandung class
+    [
+      "\\$([a-zA-Z0-9_]+)\\s*=\\s*['\"`]([^'\"`]*)['\"`]",
+      "class\\s*=\\s*['\"`]([^'\"`]*)['\"`]"
+    ],
+
+    // Untuk echo/print class
+    [
+      "(?:echo|print)\\s+['\"`]([^'\"`]*)['\"`]",
+      "class\\s*=\\s*['\"`]([^'\"`]*)['\"`]"
+    ]
+  ],
+  "tailwindCSS.emmetCompletions": true
+}
