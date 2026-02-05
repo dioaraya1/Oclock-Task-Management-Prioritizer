@@ -1,4 +1,47 @@
 @import "tailwindcss";
 
-@utility {
+@theme {
+  /* Custom Gradients */
+  --gradient-blue: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  --gradient-light-blue: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+
+  /* Animation Speeds */
+  --duration-slow: 0.3s;
+  --duration-fast: 0.15s;
+}
+
+/* Utility Classes menggunakan CSS Variables */
+@utility bg-blue-gradient {
+  background: var(--gradient-blue);
+}
+
+@utility bg-light-gradient {
+  background: var(--gradient-light-blue);
+}
+
+@utility transition-slow {
+  transition-duration: var(--duration-slow);
+  transition-timing-function: ease;
+}
+
+@utility transition-transform-slow {
+  transition: transform var(--duration-slow) ease;
+}
+
+/* mobile first queries */
+@media (max-width: 40rem) {
+  /* 640px */
+  .mobile-padding {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .text-responsive {
+    font-size: 1.5rem !important;
+  }
+
+  .button-responsive {
+    padding-left: 1.5rem !important;
+    padding-right: 0rem !important;
+  }
 }
