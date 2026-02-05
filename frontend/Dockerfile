@@ -8,7 +8,7 @@ COPY package*.json ./
 RUN npm install
 
 # Install Tailwind CSS v4
-RUN npm install tailwindcss@next @tailwindcss/vite
+RUN npm install tailwindcss@next @tailwindcss/cli
 
 # Copy source code
 COPY . .

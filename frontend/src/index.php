@@ -2,8 +2,8 @@
 
 // require_once 'config/session.php';
 
-// if (isLoggedIn()) {
-//     header('Location: dashboard.php');
+// if (!isLoggedIn()) {
+//     header('Location: login.php');
 //     exit;
 // }
 

@@ -1,32 +1,18 @@
 {
-  "name": "oclock-manajemen-tugas-prioritas",
+  "name": "frontend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "netlify:build": "vite build && cp -r dist/* ../backend/public/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dioaraya1/Oclock-Task-Management-Prioritizer.git"
+    "dev": "tailwindcss -i ./src/css/input.css -o ./src/css/styles.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/dioaraya1/Oclock-Task-Management-Prioritizer/issues"
-  },
-  "homepage": "https://github.com/dioaraya1/Oclock-Task-Management-Prioritizer#readme",
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.18",
-    "autoprefixer": "^10.4.24",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.18",
-    "vite": "^7.3.1"
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.0.0"
   }
 }
