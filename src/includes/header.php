@@ -1,5 +1,5 @@
 <?php
-$base_url = '/';  // Laragon otomatis serve dari root
+$base_url = '/';// Laragon otomatis serve dari root
 ?>
 <!DOCTYPE html>
 <html lang="en">

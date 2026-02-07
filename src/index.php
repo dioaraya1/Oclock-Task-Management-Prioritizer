@@ -31,9 +31,16 @@ include 'includes/header.php';
           <i class="fa-solid fa-circle-nodes mr-2 text-blue-600 text-2xl md:text-3xl"></i>
           Powered by K-Means Clustering
         </h2>
+        <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+          Aplikasi pintar yang menggunakan algoritma
+          <span class="font-semibold text-blue-700">K-Means Clustering</span>
+          untuk mengelompokkan dan memprioritaskan tugas Anda secara otomatis
+          berdasarkan deadline, kompleksitas, dan urgensi.
+        </p>
       </div>
     </div>
   </div>
+
 </section>
 
 <?php
