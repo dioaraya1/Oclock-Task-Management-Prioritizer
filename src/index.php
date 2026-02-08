@@ -39,8 +39,17 @@ include 'includes/header.php';
         </p>
       </div>
     </div>
-  </div>
 
+    <!-- right column - form section -->
+    <div class="flex items-center justify-center">
+      <div class="w-full max-w-md">
+        <h2 class="text-gray-700 font-bold text-xl md:text-2xl mb-4">
+          <i class="fa-solid fa-user mr-2 text-blue-600 text-2xl md:text-3xl"></i>
+          Daftar
+        </h2>
+      </div>
+    </div>
+  </div>
 </section>
 
 <?php
