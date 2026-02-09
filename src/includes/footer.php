@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="bg-blue-900 text-white py-8 mt-8">
+<footer class="bg-blue-900 text-white py-8 mt-4">
   <div class="container mx-auto px-6 mobile-padding">
     <div class="flex flex-col md:flex-row justify-between items-center">
       <!-- Logo & Brand -->

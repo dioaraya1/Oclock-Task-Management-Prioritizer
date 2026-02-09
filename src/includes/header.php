@@ -22,7 +22,10 @@ $base_url = '/';// Laragon otomatis serve dari root
       <div class="container mx-auto flex justify-between items-center mobile-padding">
         <!-- logo -->
         <div class="flex items-center space-x-2">
-          <i class="fa-solid fa-clock text-3xl text-blue-600"></i>
+          <div
+            class="bg-blue-gradient rounded-2xl flex items-center w-12 h-12 justify-center shadow-lg lg:w-14 lg:h-14">
+            <i class="fa-solid fa-clock text-2xl text-white lg:text-3xl "></i>
+          </div>
           <span class="text-xl font-bold text-blue-600">Oclock</span>
         </div>
         <!-- login button -->
