@@ -3,7 +3,7 @@
 @theme {
   /* Custom Gradients */
   --gradient-blue: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-  --gradient-light-blue: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+  --gradient-light-blue: linear-gradient(135deg, #f0f7ff 0%, #edefff 100%);
 
   /* Animation Speeds */
   --duration-slow: 0.3s;

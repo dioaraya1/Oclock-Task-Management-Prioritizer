@@ -54,16 +54,16 @@ include 'includes/header.php';
         <div class="flex items-start mt-3">
           <div class="shrink-0">
             <div
-              class="w-10 h-10 rounded-full bg-linear-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold">
-              AR
+              class="w-10 h-10 rounded-full bg-linear-to-r from-blue-400 to-blue-700 flex items-center justify-center text-white font-bold">
+              GH
             </div>
           </div>
           <div class="ml-3">
             <p class="text-sm text-gray-700 italic">
-              "O'Clock mengurangi waktu planning saya dari 2 jam menjadi 15 menit. AI-nya benar-benar memahami
+              "O'Clock mengurangi waktu planning saya dari 1 jam menjadi 15 menit. AI-nya benar-benar memahami
               prioritas!"
             </p>
-            <p class="text-xs text-gray-500 mt-1">— Andi Rahman, Product Manager</p>
+            <p class="text-xs text-gray-500 mt-1">— Genghis Khan, Product Manager</p>
             <div class="flex text-yellow-400 text-xs mt-1">
               ★★★★★
             </div>
