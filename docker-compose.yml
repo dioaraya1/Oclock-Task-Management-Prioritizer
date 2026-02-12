@@ -2,82 +2,28 @@ version: "3.8"
 
 services:
   # =============== BACKEND (PHP) ===============
-  php-backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: taskflow-php
+  web:
+    build: .
     ports:
       - "8000:80" # PHP backend di port 8000
     volumes:
-      - ./backend:/var/www/html # Live reload untuk PHP
-    environment:
-      - DB_HOST=mysql-db
-      - DB_NAME=taskflow
-      - DB_USER=root
-      - DB_PASSWORD=secret
-    networks:
-      - app-network
+      - ./:/var/www/html # Live reload untuk PHP
     depends_on:
-      - mysql-db
-    restart: unless-stopped
-
-  # =============== FRONTEND (VITE) ===============
-  vite-frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: taskflow-vite
-    ports:
-      - "5173:5173" # Vite dev server di port 5173
-      - "24678:24678" # Vite inspector
-    volumes:
-      - ./frontend:/app # Live reload untuk frontend
-      - /app/node_modules # Exclude node_modules dari host
-    environment:
-      - VITE_API_URL=http://localhost:8000/api
-      - CHOKIDAR_USEPOLLING=true # Untuk Docker file watching
-    networks:
-      - app-network
-    command: npm run dev -- --host 0.0.0.0
-    restart: unless-stopped
+      - db
 
   # =============== DATABASE ===============
-  mysql-db:
+  db:
     image: mysql:8.0
-    container_name: taskflow-mysql
     ports:
       - "3306:3306" # MySQL di port 3306
     environment:
-      - MYSQL_ROOT_PASSWORD=secret
-      - MYSQL_DATABASE=taskflow
-      - MYSQL_USER=app_user
-      - MYSQL_PASSWORD=app_password
+      - MYSQL_ROOT_PASSWORD=rootoclock
+      - MYSQL_DATABASE=oclockdb
+      - MYSQL_USER=oclock_user
+      - MYSQL_PASSWORD=oclock_password
     volumes:
       - mysql-data:/var/lib/mysql
-      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
-    networks:
-      - app-network
-    restart: unless-stopped
-
-  # =============== PHPMyAdmin (Optional) ===============
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: taskflow-pma
-    ports:
-      - "8080:80"
-    environment:
-      - PMA_HOST=mysql-db
-      - PMA_PORT=3306
-    networks:
-      - app-network
-    depends_on:
-      - mysql-db
-    restart: unless-stopped
-
-networks:
-  app-network:
-    driver: bridge
+      - ./sql/database.sql:/docker-entrypoint-initdb.d/init.sql
 
 volumes:
   mysql-data:

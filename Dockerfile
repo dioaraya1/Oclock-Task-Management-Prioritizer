@@ -1,20 +1,13 @@
-# frontend/Dockerfile
-FROM node:20-alpine
+FROM php:8.2-apache
 
-WORKDIR /app
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Install dependencies secara terpisah untuk caching
-COPY package*.json ./
-RUN npm install
+RUN a2enmod rewrite
 
-# Install Tailwind CSS v4
-RUN npm install tailwindcss@next @tailwindcss/cli
+WORKDIR /var/www/html
 
-# Copy source code
-COPY . .
+COPY . /var/www/html
 
-# Expose port untuk Vite
-EXPOSE 5173 24678
+RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 
-# Command akan dioverride di docker-compose
-CMD ["npm", "run", "dev"]
+EXPOSE 80

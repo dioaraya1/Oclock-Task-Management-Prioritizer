@@ -3,14 +3,17 @@
 // config/session.php — Manajemen Sesi dengan Pengaturan Halaman Pertama
 // ============================================================
 
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
+session_start();
 
 /** Cek apakah user sudah login */
 function isLoggedIn(): bool
 {
   return isset($_SESSION['user_id']);
+}
+
+function isAdmin(): bool
+{
+  return getSessionUser()['role'] === 'admin';
 }
 
 /** Ambil data user dari sesi */
