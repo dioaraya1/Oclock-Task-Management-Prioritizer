@@ -1,13 +1,8 @@
 <?php
+// $base_url = "/";
+require_once "../backend/config/session.php";
 
-require_once 'config/session.php';
-
-if (!isLoggedIn()) {
-  header('Location: login.php');
-  exit;
-}
-
-include 'includes/header.php';
+include "../src/includes/header.php";
 ?>
 
 <!-- hero section -->

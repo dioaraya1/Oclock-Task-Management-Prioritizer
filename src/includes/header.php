@@ -9,7 +9,7 @@ $base_url = '/';// Laragon otomatis serve dari root
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oclock - Manajemen Tugas Prioritas</title>
   <!-- tailwindcss -->
-  <link rel="stylesheet" href="<?php $base_url ?>../public/assets/css/styles.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="<?php $base_url ?>assets/css/styles.css?v=<?php echo time(); ?>">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>

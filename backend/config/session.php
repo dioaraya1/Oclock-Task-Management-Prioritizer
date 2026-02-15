@@ -3,7 +3,6 @@
 // config/session.php — Manajemen Sesi dengan Pengaturan Halaman Pertama
 // ============================================================
 
-session_start();
 
 /** Cek apakah user sudah login */
 function isLoggedIn(): bool
