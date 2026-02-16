@@ -1,4 +1,13 @@
 <?php
+$page = $_GET['page'] ?? 'index';
+
+// whitelist halaman yang boleh diakses
+$allowedPages = ['index', 'login', 'register', 'dashboard'];
+
+// kalau page tidak valid → fallback ke index
+if (!in_array($page, $allowedPages)) {
+  $page = 'index';
+}
 $base_url = '/';// Laragon otomatis serve dari root
 ?>
 <!DOCTYPE html>
@@ -29,11 +38,38 @@ $base_url = '/';// Laragon otomatis serve dari root
           <span class="text-xl font-bold text-blue-600">Oclock</span>
         </div>
         <!-- login button -->
-        <a href=" login.php"
-          class="text-blue-600 hover:text-blue-800 font-medium px-4  py-2 sm:text-base button-responsive">
-          <i class="fas fa-sign-in-alt mr-1 sm:mr-2"></i>
-          <span class="hidden sm:inline">Masuk</span>
-          <span class="sm:hidden">Login</span>
-        </a>
+        <?php if (!isLoggedIn()): ?>
+          <?php if ($page === 'index'): ?>
+            <a href="/src/login.php"
+              class=" text-blue-600 hover:text-blue-800 font-medium px-4 py-2 sm:text-base button-responsive">
+              <i class="fas fa-sign-in-alt mr-1 sm:mr-2"></i>
+              <span class="hidden sm:inline">Masuk</span>
+              <span class="sm:hidden">Login</span>
+            </a>
+          <?php elseif ($page === 'register'): ?>
+            <a href="login.php"
+              class="text-blue-600 hover:text-blue-800 font-medium px-4 py-2 sm:text-base button-responsive">
+              <i class="fas fa-sign-in-alt mr-1 sm:mr-2"></i>
+              <span class="hidden sm:inline">Masuk</span>
+              <span class="sm:hidden">Login</span>
+            </a>
+          <?php endif; ?>
+        <?php else: ?>
+          <!-- logout button -->
+          <?php if (isLoggedIn() && $page === 'dashboard'): ?>
+            <a href="logout.php"
+              class="text-blue-600 hover:text-blue-800 font-medium px-4 py-2 sm:text-base button-responsive">
+              <i class="fas fa-sign-out-alt mr-1 sm:mr-2"></i>
+              <span class="hidden sm:inline">Keluar</span>
+            </a>
+          <?php else: ?>
+            <a href=" login.php"
+              class="text-blue-600 hover:text-blue-800 font-medium px-4  py-2 sm:text-base button-responsive">
+              <i class="fas fa-sign-in-alt mr-1 sm:mr-2"></i>
+              <span class="hidden sm:inline">Masuk</span>
+              <span class="sm:hidden">Login</span>
+            </a>
+          <?php endif; ?>
+        <?php endif; ?>
       </div>
     </nav>

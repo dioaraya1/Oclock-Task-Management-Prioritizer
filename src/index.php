@@ -1,8 +1,7 @@
 <?php
-// $base_url = "/";
-require_once "../backend/config/session.php";
+require_once __DIR__ . "/../backend/config/session.php";
 
-include "../src/includes/header.php";
+require_once __DIR__ . "/../src/includes/header.php";
 ?>
 
 <!-- hero section -->
@@ -168,5 +167,5 @@ include "../src/includes/header.php";
 
 <?php
 // Include footer
-include 'includes/footer.php';
+require_once __DIR__ . '/includes/footer.php';
 ?>
