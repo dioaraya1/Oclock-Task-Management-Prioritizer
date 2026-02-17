@@ -1,3 +1,4 @@
+</main>
 <!-- Footer -->
 <footer class="bg-blue-900 text-white py-8 mt-4">
   <div class="container mx-auto px-6 mobile-padding">
@@ -33,7 +34,7 @@
     </div>
   </div>
 </footer>
-</main>
+
 <!-- JavaScript -->
 <script src="/assets/js/main.js"></script>
 </body>
