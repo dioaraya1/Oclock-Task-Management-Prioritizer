@@ -40,7 +40,7 @@ $base_url = '/';// Laragon otomatis serve dari root
         <!-- login button -->
         <?php if (!isLoggedIn()): ?>
           <?php if ($page === 'index'): ?>
-            <a href="/src/login.php"
+            <a href="login.php"
               class=" text-blue-600 hover:text-blue-800 font-medium px-4 py-2 sm:text-base button-responsive">
               <i class="fas fa-sign-in-alt mr-1 sm:mr-2"></i>
               <span class="hidden sm:inline">Masuk</span>
