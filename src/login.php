@@ -33,7 +33,7 @@ $base_url = '/';// Laragon otomatis serve dari root
   <?php
   require_once BASE_PATH . "/src/includes/header.php";
   ?>
-  <main class="flex flex-col my-10">
+  <main class="flex flex-col my-12">
     <!-- Login section -->
 
     <div class="w-full max-w-sm animate-fade-in flex flex-col mx-auto mobile-padding">
