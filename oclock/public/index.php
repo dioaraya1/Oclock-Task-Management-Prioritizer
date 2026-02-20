@@ -15,6 +15,21 @@ if ($action) {
         require_once __DIR__ . '/../src/controllers/auth.php';
         exit;
     }
+    
+    if (in_array($action, ['save_task', 'delete_task'])) {
+        require_once __DIR__ . '/../src/controllers/tasks.php';
+        exit;
+    }
+    
+    if (in_array($action, ['update_profile', 'change_password'])) {
+        require_once __DIR__ . '/../src/controllers/profile.php';
+        exit;
+    }
+    
+    if (in_array($action, ['get_user_tasks', 'delete_user', 'admin_delete_task'])) {
+        require_once __DIR__ . '/../src/controllers/admin.php';
+        exit;
+    }
 }
 
 // Get requested page
