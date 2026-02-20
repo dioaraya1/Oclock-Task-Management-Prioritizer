@@ -1,5 +1,7 @@
 <?php
 require_once BASE_PATH . "/backend/config/session.php";
+require_once BASE_PATH . "/backend/helpers/ui_helper.php";
+$page = $page ?? ($_GET['page'] ?? 'index');
 $isLoggedIn = isLoggedIn();
 ?>
 
@@ -14,46 +16,8 @@ $isLoggedIn = isLoggedIn();
       <span class="text-xl font-bold text-blue-600">Oclock</span>
     </div>
     <!-- login button -->
-    <?php if (!isLoggedIn()): ?>
-      <?php if ($page === 'index'): ?>
-        <a href="?page=login"
-          class=" text-blue-600 hover:text-blue-800 font-medium px-4 py-2 sm:text-base button-responsive">
-          <i class="fas fa-sign-in-alt mr-1 sm:mr-2"></i>
-          <span class="hidden sm:inline">Masuk</span>
-          <span class="sm:hidden">Login</span>
-        </a>
-      <?php elseif ($page === 'register'): ?>
-        <a href="?page=login"
-          class="text-blue-600 hover:text-blue-800 font-medium px-4 py-2 sm:text-base button-responsive">
-          <i class="fas fa-sign-in-alt mr-1 sm:mr-2"></i>
-          <span class="hidden sm:inline">Masuk</span>
-          <span class="sm:hidden">Login</span>
-        </a>
-      <?php elseif ($page === 'login'): ?>
-        <a href="?page=register"
-          class="text-blue-600 hover:text-blue-800 font-medium px-4 py-2 sm:text-base button-responsive">
-          <i class="fas fa-user-plus mr-1 sm:mr-2"></i>
-          <span class="hidden sm:inline">Daftar</span>
-          <span class="sm:hidden">Register</span>
-        </a>
-      <?php endif; ?>
-    <?php else: ?>
-      <!-- logout button -->
-      <?php if (isLoggedIn() && $page === 'dashboard'): ?>
-        <a href="?page=logout"
-          class="text-blue-600 hover:text-blue-800 font-medium px-4 py-2 sm:text-base button-responsive">
-          <i class="fas fa-sign-out-alt mr-1 sm:mr-2"></i>
-          <span class="hidden sm:inline">Keluar</span>
-        </a>
-      <?php else: ?>
-
-        <a href="?page=login"
-          class="text-blue-600 hover:text-blue-800 font-medium px-4  py-2 sm:text-base button-responsive">
-          <i class="fas fa-sign-in-alt mr-1 sm:mr-2"></i>
-          <span class="hidden sm:inline">Masuk</span>
-          <span class="sm:hidden">Login</span>
-        </a>
-      <?php endif; ?>
-    <?php endif; ?>
+    <div>
+      <?php renderHeaderButton($page, $isLoggedIn); ?>
+    </div>
   </div>
 </nav>

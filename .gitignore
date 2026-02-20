@@ -6,3 +6,5 @@ docker-logs/
 mysql-data/
 db-data/
 main.js/
+oclock/
+oclock-ai/

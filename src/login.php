@@ -54,14 +54,15 @@ $base_url = '/';// Laragon otomatis serve dari root
 
         <!-- Error message -->
         <!-- <?php if ($error): ?>
-    <div class="flex items-center gap-2 bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl px-4 py-3 mb-6">
-      <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" />
-        <path stroke-linecap="round" d="M12 8v4m0 4h.01" />
-      </svg>
-      <?= htmlspecialchars($error) ?>
-    </div>
-    <?php endif; ?> -->
+        <div
+          class="flex items-center gap-2 bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl px-4 py-3 mb-6">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path stroke-linecap="round" d="M12 8v4m0 4h.01" />
+          </svg>
+          <?= htmlspecialchars($error) ?>
+        </div>
+        <?php endif; ?> -->
 
         <form method="POST" action="" novalidate>
 
@@ -103,12 +104,7 @@ $base_url = '/';// Laragon otomatis serve dari root
               <button type="button" onclick="togglePassword()"
                 class="absolute inset-y-0 right-0 flex items-center pr-3 text-blue-300 hover:text-blue-500 transition-colors"
                 tabindex="-1">
-                <svg id="eye-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
-                  viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
+                <i id="eye-icon" class="fa-solid fa-eye text-sm"></i>
               </button>
             </div>
           </div>
